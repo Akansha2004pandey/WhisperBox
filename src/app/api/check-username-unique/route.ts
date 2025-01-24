@@ -18,7 +18,7 @@ export async function GET(request:Request){
     // }
     await dbConnect();
     try{
-
+        console.log(request.url,"request url");
         const {searchParams}=new URL(request.url);
         console.log(searchParams,"hello");
         const queryParam={
