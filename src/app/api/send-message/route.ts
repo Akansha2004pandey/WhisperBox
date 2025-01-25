@@ -1,7 +1,5 @@
 import dbConnect from "@/lib/dbConnect";
 import { UserModel } from "@/model/User";
-import { MessageModel } from "@/model/User";
-import { authOptions } from "../auth/[...nextauth]/options";
 import mongoose from "mongoose";
 import { Message } from "@/model/User";
 

@@ -1,26 +1,21 @@
 "use client"
-import { Form, FormControl, FormField, FormItem, FormLabel,FormDescription, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+import { Form, FormControl, FormField, FormItem, FormLabel,FormMessage } from "@/components/ui/form"
+
 import { Button } from "@/components/ui/button"
 import  {zodResolver} from '@hookform/resolvers/zod'
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { useRouter } from "next/navigation"
-import {useDebounceCallback} from "usehooks-ts"
+
 import { useToast } from '@/hooks/use-toast'
-import { signUpSchema } from '@/schemas/signUpSchema'
-import mongoose, { set } from 'mongoose'
 import axios, {AxiosError} from "axios"
 import { ApiResponse } from '@/types/ApiResponse'
-import {SubmitHandler}    from "react-hook-form"
-import { Loader2 } from 'lucide-react'
-import { Link } from 'lucide-react'
+
 import { messageValidationSchema } from "@/schemas/messageSchema"
 import React, {useState,useEffect} from "react"
-import { useSearchParams } from "next/navigation"
+
 import { Textarea } from "@/components/ui/textarea"
 import { useParams } from "next/navigation"
-import { Message } from "@/model/User"
+
 const page = (
 ) => {
   const params = useParams<{  username: string }>();
