@@ -115,7 +115,7 @@ const page = () => {
   // todo do more research
 
   const baseUrl=`${window.location.protocol}//${window.location.host}`;
-  const profileUrl=`${baseUrl}/u/{username}`;
+  const profileUrl=`${baseUrl}/u/${username}`;
   const copyToClipboard=()=>{
     navigator.clipboard.writeText(profileUrl);
     toast({
