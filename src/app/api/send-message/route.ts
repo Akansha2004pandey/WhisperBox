@@ -16,14 +16,13 @@ export async function POST(request:Request){
                 message:"Not Authenticated",
             },{status:404});
          }
-         // the user whom messages are being sent is authenticated or not 
-         // check is user accepting the messages
+         
          if(!user.isAcceptingMessage){
                return Response.json({
                    success:false,
-                   message:"You are not accepting messages",
+                   message:"User is not accepting messages",
                },{status:403});
-               // forbidden status code
+               
          }
          const newMessages={content , createdAt:new Date()};
          user.messages.push(newMessages as Message);

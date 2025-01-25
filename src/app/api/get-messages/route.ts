@@ -16,14 +16,16 @@ export async function GET(request:Request){
             message:"You are not logged in",
         },{status:401});
     }
+    console.log("session",session);
     const userId=new mongoose.Types.ObjectId(user._id);
+    
 
     try{
             // while using aggregation pipeline 
             // before in declare (Types) we converted token id toString()
            const user=await UserModel.aggregate([
              {
-                $match:{id:userId}
+                $match:{_id:userId}
              },
              {$unwind:"$messages"},
              {
@@ -32,6 +34,7 @@ export async function GET(request:Request){
                 $group:{_id:'$_id',messages:{$push:'$messages'}}
              }
            ])
+           console.log("user",user);
            // messages pushed after being sorted
            if(!user || user.length===0){
                return Response.json({
