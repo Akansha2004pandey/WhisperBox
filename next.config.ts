@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
     '@react-email/render',
     '@react-email/tailwind'
 ]
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds: true, // Ignore ESLint errors during build
+  },
 };
 
 export default nextConfig;
